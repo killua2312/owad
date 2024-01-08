@@ -14,6 +14,7 @@ app.use(cookieparser());
 app.use("/api/media", require("./routes/mediaRoutes"));
 app.use("/api", require("./routes/userRoutes"));
 app.use("/api/wallet", require("./routes/walletRoutes"));
+app.use("/checkAuth", require("./routes/checkAuthenticaion"));
 
 // Static Files
 app.use("/public", express.static(path.join(__dirname, "public")));

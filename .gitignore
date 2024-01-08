@@ -1,14 +1,14 @@
 # dependencies
 /Backend/node_modules
-
+/frontend/node_modules
 
 # static files
 /Backend/public
 
 
-# .env files
+# dotfiles
 /Backend/.env
-
+/frontend/.next
 
 # Other files
 /Backend/data.json

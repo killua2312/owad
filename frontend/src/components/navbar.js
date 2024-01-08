@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoPerson } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Search from "@/components/search";
@@ -9,16 +9,15 @@ import Wallet from "./wallet";
 import Sidebar from "./sidebar";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
-  const pathname = usePathname();
-
   return (
-    <nav className="bg-secondaryBackground h-16 shadow-3d">
+    <nav className="bg-secondaryBackground h-7vh shadow-3d">
       <div className="w-11/12 h-full flex flex-row justify-between items-center mx-auto my-0">
         <div className="flex flex-row w-1/3 gap-10">
           <div className="flex flex-row gap-2 lg:gap-10">

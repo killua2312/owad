@@ -15,8 +15,20 @@ module.exports = {
         secondaryText: "#A9A9A9",
         highlight: "#3F3F3F",
       },
+      // colors: {
+      //   primaryBackground: "#000000",
+      //   secondaryBackground: "#2f4f4f",
+      //   accent: "#007fff",
+      //   primaryText: "#f8f8ff",
+      //   secondaryText: "#cb4154",
+      //   highlight: "#e5e4e2",
+      // },
       boxShadow: {
         "3d": "0 4px 10px rgba(0, 0, 0, 0.5)",
+      },
+      height: {
+        "7vh": "7vh",
+        93: "93vh",
       },
     },
   },
