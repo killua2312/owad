@@ -75,7 +75,7 @@ const Auth = () => {
             <CardHeader>
               <CardTitle>Login</CardTitle>
               <CardDescription>
-                Didn't register yet, switch to SignUp
+                Didn&apos;t register yet, switch to SignUp
               </CardDescription>
             </CardHeader>
             <form onSubmit={handleSubmit}>
