@@ -6,34 +6,64 @@ import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 
 const VideoPlayer = () => {
+  const [adSchedule, setAdSchedule] = useState([
+    {
+      time: 0,
+      url: "http://localhost:5000/public/opAd/output.m3u8",
+      played: false,
+    },
+    {
+      time: 420,
+      url: "http://localhost:5000/public/opAd/output.m3u8",
+      played: false,
+    },
+    {
+      time: 1200,
+      url: "http://localhost:5000/public/opAd/output.m3u8",
+      played: false,
+    },
+  ]);
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const url = searchParams.get("url");
 
-  const [isAdPlaying, setIsAdPlaying] = useState(false);
+  const [currentAd, setCurrentAd] = useState(null);
   const [playedSeconds, setPlayedSeconds] = useState(0);
-  const [adPlayed, setAdPlayed] = useState(false);
 
   const handleProgress = (progress) => {
+    if (currentAd) return;
     setPlayedSeconds(progress.playedSeconds);
-    if (playedSeconds >= 180 && !isAdPlaying && !adPlayed) {
-      setIsAdPlaying(true);
-      setAdPlayed(true);
+    const adToPlay = adSchedule.find(
+      (ad) => playedSeconds >= ad.time && !ad.played
+    );
+
+    if (adToPlay) {
+      setCurrentAd(adToPlay);
     }
+  };
+
+  const onAdEnded = () => {
+    setAdSchedule((schedule) =>
+      schedule.map((ad) =>
+        ad.time === currentAd.time ? { ...ad, played: true } : ad
+      )
+    );
+    setCurrentAd(null);
   };
 
   return (
     <div className="bg-black overflow-hidden fixed top-0 left-0 w-full h-full">
       <div
         style={{
-          display: isAdPlaying ? "none" : "block",
+          display: Boolean(currentAd) ? "none" : "block",
           width: "100%",
           height: "100vh",
         }}
       >
         <ReactPlayer
           url={url}
-          playing={!isAdPlaying}
+          playing={!currentAd}
           controls
           onProgress={handleProgress}
           width="100%"
@@ -45,14 +75,12 @@ const VideoPlayer = () => {
         />
       </div>
 
-      {isAdPlaying && (
+      {currentAd && (
         <div style={{ width: "100%", height: "100vh" }}>
           <ReactPlayer
-            url="http://localhost:5000/public/opAd/output.m3u8"
-            playing={isAdPlaying}
-            onEnded={() => {
-              setIsAdPlaying(false);
-            }}
+            url={currentAd.url}
+            playing={Boolean(currentAd)}
+            onEnded={onAdEnded}
             width="100%"
             height="100%"
           />

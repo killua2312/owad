@@ -28,7 +28,7 @@ const MediaCard = ({ media }) => {
             <h2>{media.title}</h2>
             <div className="flex flex-row gap-3">
               {media.genre.map((gen) => (
-                <h3>{gen}</h3>
+                <h3 key={gen}>{gen}</h3>
               ))}
             </div>
             {media.videoUrl === "Coming Soon" && <h3>Coming Soon</h3>}

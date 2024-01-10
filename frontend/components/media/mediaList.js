@@ -29,7 +29,7 @@ const MediaList = () => {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4 mt-[5vh]">
       {mediaData.map((media) => (
-        <MediaCard media={media} />
+        <MediaCard key={media._id} media={media} />
       ))}
     </div>
   );

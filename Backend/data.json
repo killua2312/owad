@@ -33,7 +33,7 @@
     "genre": ["Animation", "Action", "Fantasy"],
     "summary": "The prequel to Jujutsu Kaisen (2020), where a high schooler gains control of an extremely powerful cursed spirit and gets enrolled in the Tokyo Prefectural Jujutsu High School by Jujutsu Sorcerers.",
     "thumbnailUrl": "http://localhost:5000/public/Thumbnails/YourName.jpg",
-    "videoUrl": "http://localhost:5000/public/YourName/output.m3u8"
+    "videoUrl": "http://localhost:5000/public/jujutsukaisen0/output.m3u8"
   },
   {
     "title": "One Piece: Luffy's Peak - Attained! Gear Five",
