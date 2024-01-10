@@ -1,11 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { IoPerson } from "react-icons/io5";
-import { RxHamburgerMenu } from "react-icons/rx";
-import Search from "@/components/search";
-import Link from "next/link";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { RxHamburgerMenu } from "react-icons/rx";
+import Link from "next/link";
+import SearchComponent from "./search";
 import Wallet from "./wallet";
+import AccountMenu from "./profile";
 import Sidebar from "./sidebar";
 
 const Navbar = () => {
@@ -17,54 +18,57 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-secondaryBackground h-7vh shadow-3d">
-      <div className="w-11/12 h-full flex flex-row justify-between items-center mx-auto my-0">
+    <header className="h-7vh shadow-3d border-b-2">
+      <nav className="w-11/12 h-full flex flex-row justify-between items-center mx-auto my-0">
         <div className="flex flex-row w-1/3 gap-10">
-          <div className="flex flex-row gap-2 lg:gap-10">
-            <button onClick={toggleSidebar} className="mx-4 lg:hidden">
+          <div className="flex flex-row items-center gap-2 lg:gap-10">
+            <Button
+              variant="ghost"
+              onClick={toggleSidebar}
+              className="mx-4 text-2xl lg:hidden"
+            >
               <RxHamburgerMenu />
-            </button>
+            </Button>
             <Link href="/">
               <h1 className="text-center font-black w-1/3">OWAD</h1>
             </Link>
           </div>
           <div className="hidden lg:flex flex-row justify-between w-2/3">
-            <Link
-              href="/"
-              className={`${pathname === "/" ? "text-highlight" : ""}`}
-            >
+            <Link href="/" className={`${pathname === "/" ? "font-bold" : ""}`}>
               Home
             </Link>
             <Link
               href="/myList"
-              className={`${pathname === "/myList" ? "text-highlight" : ""}`}
+              className={`${pathname === "/myList" ? "font-bold" : ""}`}
             >
               My List
             </Link>
             <Link
               href="/anime"
-              className={`${pathname === "/anime" ? "text-highlight" : ""}`}
+              className={`${pathname === "/anime" ? "font-bold" : ""}`}
             >
               Anime
             </Link>
             <Link
               href="/movies"
-              className={`${pathname === "/movies" ? "text-highlight" : ""}`}
+              className={`${pathname === "/movies" ? "font-bold" : ""}`}
             >
               Movies
             </Link>
           </div>
         </div>
         <div className="flex justify-end lg:flex-row gap-10 items-center w-5/12">
-          <Search />
+          <SearchComponent />
           <div className="hidden lg:block">
             <Wallet />
           </div>
-          <IoPerson className="text-2xl hidden lg:block" />
+          <div className="hidden lg:block">
+            <AccountMenu />
+          </div>
         </div>
         {isSidebarOpen && <Sidebar />}
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

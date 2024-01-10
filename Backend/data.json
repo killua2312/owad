@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Your Name (Kimi no na wa)",
+    "release": "2016",
+    "rating": "TV-PG",
+    "genre": ["Animation", "Drama", "Fantasy"],
+    "summary": "Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person.",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/YourName.jpg",
+    "videoUrl": "http://localhost:5000/public/YourName/output.m3u8"
+  },
+  {
+    "title": "5 Centimeters per Second",
+    "release": "2007",
+    "rating": "TV-PG",
+    "genre": ["Animation", "Drama", "Family"],
+    "summary": "Told in three interconnected segments, Takaki tells the story of his life as cruel winters, cold technology, and finally, adult obligations and responsibility converge to test the delicate petals of love.",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/5CentimetersPerSecond.jpg",
+    "videoUrl": "http://localhost:5000/public/5CentimetersPerSecond/output.m3u8"
+  },
+  {
+    "title": "The Bourne Ultimatum",
+    "release": "2007",
+    "rating": "PG-13",
+    "genre": ["Action", "Mystery", "Thriller"],
+    "summary": "Jason Bourne dodges a ruthless C.I.A. official and his Agents from a new assassination program while searching for the origins of his life as a trained killer.",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/TheBourneUltimate.jpg",
+    "videoUrl": "http://localhost:5000/public/BourneUltimatum/output.m3u8"
+  },
+  {
+    "title": "Jujutsu Kaisen 0",
+    "release": "2021",
+    "rating": "PG-13",
+    "genre": ["Animation", "Action", "Fantasy"],
+    "summary": "The prequel to Jujutsu Kaisen (2020), where a high schooler gains control of an extremely powerful cursed spirit and gets enrolled in the Tokyo Prefectural Jujutsu High School by Jujutsu Sorcerers.",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/YourName.jpg",
+    "videoUrl": "http://localhost:5000/public/YourName/output.m3u8"
+  },
+  {
+    "title": "One Piece: Luffy's Peak - Attained! Gear Five",
+    "release": "2023",
+    "rating": "TV-PG",
+    "genre": ["Animation", "Action", "Adventure"],
+    "summary": "Monkey D. Luffy sets off on an adventure with his pirate crew in hopes of finding the greatest treasure ever, known as the \"One Piece.\"",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/OnePieceGear5.jpg",
+    "videoUrl": "http://localhost:5000/public/op1071/output.m3u8"
+  },
+  {
+    "title": "12th Fail",
+    "release": "2023",
+    "rating": "PG-13",
+    "genre": ["Biography", "Drama"],
+    "summary": "The real-life story of IPS Officer Manoj Kumar Sharma and IRS Officer Shraddha Joshi.",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/12thFail.jpg",
+    "videoUrl": "Coming Soon"
+  },
+  {
+    "title": "Suzume (Suzume no Tojimari)",
+    "release": "2022",
+    "rating": "PG",
+    "genre": ["Animation", "Action", "Adventure"],
+    "summary": "A modern action adventure road story where a 17-year-old girl named Suzume helps a mysterious young man close doors from the other side that are releasing disasters all over in Japan.",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/Suzume.jpg",
+    "videoUrl": "Coming Soon"
+  },
+  {
+    "title": "Who Am I",
+    "release": "2014",
+    "rating": "PG-13",
+    "genre": ["Crime", "Drama", "Mystery"],
+    "summary": "Benjamin, a young German computer whiz, is invited to join a subversive hacker group that wants to be noticed on the world's stage.",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/WhoAmI.jpg",
+    "videoUrl": "Coming Soon"
+  },
+  {
+    "title": "Bhadra",
+    "release": "2005",
+    "rating": "PG-13",
+    "genre": ["Action", "Drama", "Romance"],
+    "summary": "Bhadra sees Raja's sister Anu on a video and falls in love with her. Badra visits Raja's home and he realises that Raja's family is highly involved in feud actions.",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/Bhadra.jpg",
+    "videoUrl": "Coming Soon"
+  },
+  {
+    "title": "Pokiri",
+    "release": "2006",
+    "rating": "PG-13",
+    "genre": ["Action", "Crime", "Thriller"],
+    "summary": "A money-minded criminal has to deal with two rival gangs as well as an evil cop threatening his girlfriend.",
+    "thumbnailUrl": "http://localhost:5000/public/Thumbnails/Pokiri.jpg",
+    "videoUrl": "Coming Soon"
+  }
+]

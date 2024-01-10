@@ -17,6 +17,6 @@ app.use("/api/wallet", require("./routes/walletRoutes"));
 app.use("/checkAuth", require("./routes/checkAuthenticaion"));
 
 // Static Files
-app.use("/public", express.static(path.join(__dirname, "public")));
+app.use("/public", express.static(path.join(__dirname, "../../public")));
 
 module.exports = app;

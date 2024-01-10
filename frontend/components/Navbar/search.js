@@ -1,7 +1,9 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { IoSearchOutline } from "react-icons/io5";
-import { useSearchStore } from "@/store";
+import { useSearchStore } from "@/lib/store";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const SearchComponent = () => {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -29,19 +31,18 @@ const SearchComponent = () => {
   return (
     <div className="items-center" ref={searchRef}>
       {searchOpen ? (
-        <div className="flex rounded-xl overflow-hidden">
-          <input
-            className="lg:px-4 py-2 text-highlight"
-            type="text"
-            placeholder="Search..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </div>
+        <Input
+          className="lg:px-4 py-2"
+          type="text"
+          placeholder="Search..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
       ) : (
-        <button onClick={toggleSearch}>
-          <IoSearchOutline className="h-5 w-5 text-2xl" />
-        </button>
+        <IoSearchOutline
+          className="h-5 w-5 text-2xl cursor-pointer"
+          onClick={toggleSearch}
+        />
       )}
     </div>
   );

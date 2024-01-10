@@ -9,6 +9,3 @@
 # dotfiles
 /Backend/.env
 /frontend/.next
-
-# Other files
-/Backend/data.json
