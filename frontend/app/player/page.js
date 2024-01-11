@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import ReactPlayer from "react-player";
-import { GrClose } from "react-icons/gr";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 
@@ -84,8 +84,8 @@ const VideoPlayer = () => {
           height="100%"
         />
         <div className={isAdPlaying ? "hidden" : "block"}>
-          <GrClose
-            className="absolute top-0 right-0 m-4 mr-10 text-5xl text-white p-2 cursor-pointer"
+          <IoIosArrowRoundBack
+            className="absolute top-0 left-0 m-4 ml-10 text-8xl text-white p-2 cursor-pointer"
             onClick={() => router.replace("/")}
           />
         </div>
