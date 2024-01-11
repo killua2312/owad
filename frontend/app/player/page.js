@@ -4,7 +4,6 @@ import ReactPlayer from "react-player";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import { useAuth } from "@/lib/authCheck";
 
 const VideoPlayer = () => {
   const [adSchedule, setAdSchedule] = useState([
@@ -63,13 +62,6 @@ const VideoPlayer = () => {
     setVideoUrl(url);
     setIsAdPlaying(false);
   };
-
-  // Authentication check
-  // const isChecking = useAuth();
-
-  // if (isChecking) {
-  //   return <div>Loading...</div>;
-  // }
 
   return (
     <div className="bg-black overflow-hidden fixed top-0 left-0 w-full h-full">

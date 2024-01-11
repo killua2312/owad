@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -17,8 +16,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Signup from "./signup";
 
 const Auth = () => {
-  const router = useRouter();
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -59,11 +56,8 @@ const Auth = () => {
         const { token } = data;
         localStorage.setItem("token", token);
 
-        // redirecting after login successful
-        const redirectTo = localStorage.getItem("redirectTo") || "/";
-        localStorage.removeItem("redirectTo");
-
-        router.push(redirectTo);
+        // for full home page reload
+        window.location.href = "/";
       } else if (response.status === 401) {
         alert("Invalid email or password");
       }

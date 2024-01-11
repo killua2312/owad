@@ -48,9 +48,6 @@ const AccountMenu = () => {
               <Link href="/auth">Login</Link>
             </Button>
           )}
-          {/* <Button variant="outline" className="mx-auto my-0">
-            <Link href="/auth">Login</Link>
-          </Button> */}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
