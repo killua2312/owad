@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 export const useAuth = () => {
   const [isChecking, setIsChecking] = useState(true);
   const router = useRouter();
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {

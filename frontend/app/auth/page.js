@@ -58,6 +58,8 @@ const Auth = () => {
       if (response.ok || response.status === 200) {
         const { token } = data;
         localStorage.setItem("token", token);
+
+        // redirecting after login successful
         const redirectTo = localStorage.getItem("redirectTo") || "/";
         localStorage.removeItem("redirectTo");
 

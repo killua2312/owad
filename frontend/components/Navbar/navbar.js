@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
@@ -8,10 +8,21 @@ import SearchComponent from "./search";
 import Wallet from "./wallet";
 import AccountMenu from "./profile";
 import Sidebar from "./sidebar";
+import { useAuthStore } from "@/lib/store";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const router = useRouter();
+  const { isAuthenticated, checkAuth } = useAuthStore();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const routerCallback = () => {
+    router.push("/auth");
+  };
+
+  useEffect(() => {
+    checkAuth(routerCallback);
+  }, [isAuthenticated]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);

@@ -65,11 +65,11 @@ const VideoPlayer = () => {
   };
 
   // Authentication check
-  const isChecking = useAuth();
+  // const isChecking = useAuth();
 
-  if (isChecking) {
-    return <div>Loading...</div>;
-  }
+  // if (isChecking) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div className="bg-black overflow-hidden fixed top-0 left-0 w-full h-full">

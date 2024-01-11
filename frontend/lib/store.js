@@ -6,9 +6,35 @@ const useSearchStore = create((set) => ({
   setQuery: (query) => set({ query }),
 }));
 
-const usePlayVideo = create((set) => ({
-  playVideo: false,
-  setPlayVideo: (bool) => set({ playVideo: bool }),
+const useAuthStore = create((set) => ({
+  isAuthenticated: false,
+  checkAuth: async (routerCallback) => {
+    console.log("checkAuth Called");
+    const token = localStorage.getItem("token");
+    if (!token) {
+      routerCallback();
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/checkAuth", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        routerCallback();
+      } else if (response.ok) {
+        set({ isAuthenticated: true });
+      }
+    } catch (error) {
+      console.error("Error verifying token:", error);
+      set({ isAuthenticated: false });
+    }
+  },
 }));
 
-export { useSearchStore, usePlayVideo };
+export { useSearchStore, useAuthStore };
