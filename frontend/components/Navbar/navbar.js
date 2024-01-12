@@ -70,9 +70,12 @@ const Navbar = () => {
         </div>
         <div className="flex justify-end lg:flex-row gap-10 items-center w-5/12">
           <SearchComponent />
-          <div className="hidden lg:block">
-            <Wallet />
-          </div>
+          {isAuthenticated && (
+            <div className="hidden lg:block">
+              <Wallet />
+            </div>
+          )}
+
           <div className="hidden lg:block">
             <AccountMenu />
           </div>

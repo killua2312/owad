@@ -9,7 +9,6 @@ const useSearchStore = create((set) => ({
 const useAuthStore = create((set) => ({
   isAuthenticated: false,
   checkAuth: async (routerCallback) => {
-    console.log("checkAuth Called");
     const token = localStorage.getItem("token");
     if (!token) {
       routerCallback();
@@ -37,4 +36,30 @@ const useAuthStore = create((set) => ({
   },
 }));
 
-export { useSearchStore, useAuthStore };
+const useWalletStore = create((set) => ({
+  amount: 0,
+  fetchAmount: async () => {
+    const token = localStorage.getItem("token");
+
+    try {
+      const response = await fetch("http://localhost:5000/api/wallet", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        return;
+      } else if (response.ok) {
+        const { amount } = await response.json();
+        set({ amount: amount });
+      }
+    } catch (error) {
+      console.error("Error Verifying token:", error);
+    }
+  },
+}));
+
+export { useSearchStore, useAuthStore, useWalletStore };

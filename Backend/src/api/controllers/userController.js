@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const walletController = require("./walletController");
 require("dotenv").config();
 
 const userController = {
@@ -13,6 +14,10 @@ const userController = {
         username: req.body.username,
       });
       const savedUser = await user.save();
+
+      // creating wallet when user is created
+      walletController.createWallet(savedUser._id);
+
       res.status(201).json({ userId: savedUser._id });
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -26,7 +31,7 @@ const userController = {
     }
 
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
+      expiresIn: "24h",
     });
     res.json({ token });
   },
@@ -37,6 +42,10 @@ const userController = {
       if (!user) {
         return res.status(404).send();
       }
+
+      // deleting Wallet and transactions when user deleted
+      walletController.deleteWallet(user._id);
+
       res.send(user);
     } catch (error) {
       res.status(500).send(error);

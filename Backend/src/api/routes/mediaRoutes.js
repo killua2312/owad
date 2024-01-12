@@ -5,7 +5,7 @@ const authenticationToken = require("../middleware/authenticationToken");
 
 router.post("/", mediaController.createMedia);
 
-router.get("/", mediaController.getAllMedia);
+router.get("/", authenticationToken, mediaController.getAllMedia);
 
 router.get("/:id", mediaController.getOneMedia);
 

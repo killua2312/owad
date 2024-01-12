@@ -1,18 +1,16 @@
+const User = require("../models/user");
 const Wallet = require("../models/wallet");
 
 const walletController = {
-  async createWallet(req, res) {
-    const userId = req.user.userId;
-
+  async createWallet(id) {
     try {
       const wallet = new Wallet({
-        userId: userId,
+        userId: id,
         amount: 0,
       });
-      const savedWallet = await wallet.save();
-      res.status(201).json({ walletId: savedWallet._id });
+      await wallet.save();
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      console.error(error);
     }
   },
 
@@ -41,6 +39,14 @@ const walletController = {
       res.send(wallet);
     } catch (error) {
       res.status(500).send(error);
+    }
+  },
+
+  async deleteWallet(id) {
+    try {
+      await Wallet.deleteOne({ userId: id });
+    } catch (error) {
+      console.log(error);
     }
   },
 };
