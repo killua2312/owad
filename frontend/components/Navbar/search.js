@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { useSearchStore } from "@/lib/store";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const SearchComponent = () => {
