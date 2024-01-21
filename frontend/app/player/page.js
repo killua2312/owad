@@ -9,17 +9,17 @@ const VideoPlayer = () => {
   const [adSchedule, setAdSchedule] = useState([
     {
       time: 0,
-      url: "http://localhost:5000/public/opAd/output.m3u8",
+      url: "process.env.AD_URL",
       played: false,
     },
     {
       time: 420,
-      url: "http://localhost:5000/public/opAd/output.m3u8",
+      url: "process.env.AD_URL",
       played: false,
     },
     {
       time: 1200,
-      url: "http://localhost:5000/public/opAd/output.m3u8",
+      url: "process.env.AD_URL",
       played: false,
     },
   ]);

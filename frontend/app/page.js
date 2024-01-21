@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full">
+    <main className="w-full overflow-hidden">
       <MediaList />
     </main>
   );
