@@ -25,7 +25,7 @@ const WalletPage = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("process.env.BACKEND_URL/api/wallet", {
+      const response = await fetch("http://localhost:5000/api/wallet", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

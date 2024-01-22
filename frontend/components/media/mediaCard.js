@@ -9,7 +9,7 @@ const MediaCard = ({ media }) => {
       key={media._id}
       className="justify-self-center rounded-2xl shadow-3d pb-5 pl-5"
     >
-      <div className="transform hover:scale-110 transition duration-300">
+      <div className="transform hover:scale-110 hover:z-100 transition duration-300">
         <img
           src={media.thumbnailUrl}
           alt={media.title}
