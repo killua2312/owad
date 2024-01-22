@@ -5,7 +5,13 @@ const cookieparser = require("cookie-parser");
 const app = express();
 
 const corsOptions = {
-  origin: process.env.FRONT_URL,
+  origin: "http://localhost:3000",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  exposedHeaders: ["Content-Length", "Authorization"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  preflightContinue: false,
+  maxAge: 86400,
   optionsSuccessStatus: 200,
 };
 

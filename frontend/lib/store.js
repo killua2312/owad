@@ -16,7 +16,7 @@ const useAuthStore = create((set) => ({
     }
 
     try {
-      const response = await fetch("process.env.BACKEND_URL/checkAuth", {
+      const response = await fetch(`http://localhost:5000/checkAuth`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const useWalletStore = create((set) => ({
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch("process.env.BACKEND_URL/api/wallet", {
+      const response = await fetch("http://localhost:5000/api/wallet", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

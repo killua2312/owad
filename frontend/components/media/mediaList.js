@@ -9,7 +9,7 @@ const MediaList = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("process.env.BACKEND_URL/api/media", {
+        const response = await fetch("http://localhost:5000/api/media", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
