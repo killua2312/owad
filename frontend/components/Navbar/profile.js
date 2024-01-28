@@ -18,7 +18,7 @@ const AccountMenu = () => {
   const { isAuthenticated, checkAuth } = useAuthStore();
 
   const routerCallback = () => {
-    window.location.href = "/auth";
+    window.location.href = "/login";
   };
 
   const handleClick = () => {

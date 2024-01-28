@@ -17,7 +17,7 @@ const Navbar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const routerCallback = () => {
-    router.push("/auth");
+    router.push("/login");
   };
 
   useEffect(() => {

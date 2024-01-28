@@ -4,6 +4,7 @@ import ReactPlayer from "react-player";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
+// import CustomPlayer from "./customPlayer";
 
 const VideoPlayer = () => {
   const [adSchedule, setAdSchedule] = useState([
@@ -85,12 +86,14 @@ const VideoPlayer = () => {
         />
         <div className={isAdPlaying ? "hidden" : "block"}>
           <IoIosArrowRoundBack
-            className="absolute top-0 left-0 m-4 ml-10 text-8xl text-white p-2 cursor-pointer"
+            className="absolute top-0 left-0 m-4 ml-3 text-6xl text-white p-2 cursor-pointer md:text-7xl md:ml-6 lg:text-8xl lg:ml-9"
             onClick={() => router.replace("/")}
           />
         </div>
       </div>
     </div>
+
+    // <CustomPlayer url={url} />
   );
 };
 
