@@ -108,6 +108,7 @@ const Signup = () => {
                 name="username"
                 value={formData.username}
                 onChange={handleChange}
+                autoComplete="off"
               />
             </div>
             <div className="space-y-1">
@@ -117,6 +118,7 @@ const Signup = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                autoComplete="off"
               />
             </div>
             <div className="space-y-1">

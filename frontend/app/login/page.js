@@ -63,8 +63,9 @@ const Auth = () => {
       const data = await response.json();
 
       if (response.ok || response.status === 200) {
-        const { token } = data;
+        const { token, role } = data;
         localStorage.setItem("token", token);
+        localStorage.setItem("role", role);
 
         // for full home page reload
         window.location.href = "/";
@@ -98,6 +99,7 @@ const Auth = () => {
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
+                autoComplete="off"
               />
             </div>
             <div className="space-y-2">
@@ -109,6 +111,7 @@ const Auth = () => {
                   id="password"
                   value={formData.password}
                   onChange={handleChange}
+                  autoComplete="off"
                 />
                 <div
                   className="absolute inset-y-0 right-0 fles items-center pr-2 pt-2 cursor-pointer"

@@ -8,6 +8,7 @@ const useSearchStore = create((set) => ({
 
 const useAuthStore = create((set) => ({
   isAuthenticated: false,
+  role: "",
   checkAuth: async (routerCallback) => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -27,7 +28,8 @@ const useAuthStore = create((set) => ({
       if (!response.ok) {
         routerCallback();
       } else if (response.ok) {
-        set({ isAuthenticated: true });
+        const role = localStorage.getItem("role");
+        set({ isAuthenticated: true, role: role });
       }
     } catch (error) {
       console.error("Error verifying token:", error);

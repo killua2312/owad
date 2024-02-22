@@ -30,10 +30,12 @@ const userController = {
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
+    const role = user.role;
+
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "24h",
     });
-    res.json({ token });
+    res.json({ token, role });
   },
 
   async deleteUser(req, res) {
