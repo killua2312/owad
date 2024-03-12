@@ -7,20 +7,21 @@ import { useSearchParams } from "next/navigation";
 // import CustomPlayer from "./customPlayer";
 
 const VideoPlayer = () => {
+  const adUrl = process.env.NEXT_PUBLIC_AD_URL;
   const [adSchedule, setAdSchedule] = useState([
     {
       time: 0,
-      url: "http://localhost:5000/public/opAd/output.m3u8",
+      url: `${adUrl}`,
       played: false,
     },
     {
       time: 420,
-      url: "http://localhost:5000/public/opAd/output.m3u8",
+      url: `${adUrl}`,
       played: false,
     },
     {
       time: 1200,
-      url: "http://localhost:5000/public/opAd/output.m3u8",
+      url: `${adUrl}`,
       played: false,
     },
   ]);

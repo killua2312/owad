@@ -22,18 +22,21 @@ const Sidebar = () => {
       </Link>
       <Link
         href="/myList"
+        prefetch={false}
         className={`${pathname === "/movies" ? "font-bold" : ""} block py-2`}
       >
         My List
       </Link>
       <Link
         href="/anime"
+        prefetch={false}
         className={`${pathname === "/movies" ? "font-bold" : ""} block py-2`}
       >
         Anime
       </Link>
       <Link
         href="/movies"
+        prefetch={false}
         className={`${pathname === "/movies" ? "font-bold" : ""} block py-2`}
       >
         Movies

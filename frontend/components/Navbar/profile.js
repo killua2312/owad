@@ -10,11 +10,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { IoPerson } from "react-icons/io5";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useAuthStore } from "@/lib/store";
 
 const AccountMenu = () => {
-  const router = useRouter();
   const { isAuthenticated, checkAuth } = useAuthStore();
 
   const routerCallback = () => {

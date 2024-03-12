@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 const WalletPage = () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const { isAuthenticated } = useAuthStore();
   const [value, setValue] = useState("");
   const { amount, fetchAmount } = useWalletStore();
@@ -25,7 +26,7 @@ const WalletPage = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/wallet", {
+      const response = await fetch(`${apiUrl}/wallet`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

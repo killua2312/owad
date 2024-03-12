@@ -17,6 +17,7 @@ import Link from "next/link";
 import { useAuthStore } from "@/lib/store";
 
 const Signup = () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const router = useRouter();
   const { isAuthenticated } = useAuthStore();
 
@@ -65,7 +66,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/signup", {
+      const response = await fetch(`${apiUrl}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

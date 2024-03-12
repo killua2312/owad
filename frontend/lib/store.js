@@ -1,6 +1,7 @@
 "use client";
 import { create } from "zustand";
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const useSearchStore = create((set) => ({
   query: "",
   setQuery: (query) => set({ query }),
@@ -17,7 +18,7 @@ const useAuthStore = create((set) => ({
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/checkAuth`, {
+      const response = await fetch(`${apiUrl}/checkAuth`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +45,7 @@ const useWalletStore = create((set) => ({
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch("http://localhost:5000/api/wallet", {
+      const response = await fetch(`${apiUrl}/wallet`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

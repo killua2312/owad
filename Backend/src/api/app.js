@@ -22,9 +22,9 @@ app.use(express.json());
 app.use(cookieparser());
 
 // Routes
-app.use("/api/media", require("./routes/mediaRoutes"));
-app.use("/api", require("./routes/userRoutes"));
-app.use("/api/wallet", require("./routes/walletRoutes"));
+app.use("/media", require("./routes/mediaRoutes"));
+app.use("/", require("./routes/userRoutes"));
+app.use("/wallet", require("./routes/walletRoutes"));
 app.use("/checkAuth", require("./routes/checkAuthenticaion"));
 
 // Static Files

@@ -4,12 +4,13 @@ import MediaCard from "./mediaCard";
 
 const MediaList = () => {
   const [mediaData, setMediaData] = useState([]);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("http://localhost:5000/api/media", {
+        const response = await fetch(`${apiUrl}/media`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
