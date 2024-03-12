@@ -9,4 +9,4 @@
 # dotfiles
 /Backend/.env
 /frontend/.next
-/frontend/.env.local
+/frontend/.env
