@@ -18,9 +18,9 @@ const DisclaimerDialoge = () => {
   return (
     <dialog
       ref={dialog}
-      className="fixed inset-0 bg-background bg-opacity-75 z-40"
+      className="fixed inset-0 bg-background bg-opacity-75 z-40 w-full h-full"
     >
-      <div className="relative z-50 p-4 w-full max-w-lg max-auto mt-20 bg-background text-foreground shadow-lg border-foreground border-2 rounded-xl">
+      <div className="relative z-50 p-4 w-full max-w-lg max-auto mt-20 mx-auto my-0 bg-background text-foreground shadow-lg border-foreground border-2 rounded-xl">
         <div className="text-right">
           <button onClick={handleClose} className="text-xl font-semibold px-2">
             &times;

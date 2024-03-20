@@ -10,7 +10,7 @@ export default function Home() {
   const router = useRouter();
 
   const routerCallback = () => {
-    router.push("/auth");
+    router.push("/login");
   };
 
   useEffect(() => {
